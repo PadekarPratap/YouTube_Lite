@@ -37,7 +37,7 @@ const Navbar = () => {
         </button>
 
         {/* cross icon  */}
-        {search && <div className="absolute right-[70px] cursor-pointer hover:bg-[#222222] w-[30px] h-[30px] rounded-full flex items-center justify-center">
+        {search && <div className="absolute md:right-[20%] right-[30%] cursor-pointer hover:bg-[#222222] w-[30px] h-[30px] rounded-full flex items-center justify-center">
           <RxCross2 color="#fff" onClick={() => setSearch('')} />
         </div>}
       </div>
