@@ -2,10 +2,14 @@ import { abbreviateNumber } from 'js-abbreviation-number'
 import React from 'react'
 import {GoPrimitiveDot} from 'react-icons/go'
 import {FaCheckCircle} from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
 
 const ThumbnailCard = ({video}) => {
+
+    const navigate = useNavigate()
+
   return (
-    <div className='flex mb-5 gap-5 md:flex-row flex-col'>
+    <div className='flex gap-5 md:flex-row flex-col cursor-pointer hover:bg-ytGray rounded-lg px-4 py-5' onClick={() => navigate(`/video/${video?.videoId}`)}>
         {/* video image  */}
         <div className='w-full h-[250px] basis-[60%] lg:basis-[40%]'>   
             <img src={video?.thumbnails[0]?.url} alt={video?.title} className='w-full h-full rounded-lg' />

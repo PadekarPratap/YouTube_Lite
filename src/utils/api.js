@@ -6,7 +6,3 @@ export const options = {
         'X-RapidAPI-Host': 'youtube138.p.rapidapi.com'
       }
 };
-
-export const ENDPOINTS = {
-    
-}

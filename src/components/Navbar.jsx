@@ -12,18 +12,23 @@ import { useDispatch, useSelector } from "react-redux";
 import { CHANGE_SIDEBAR, SET_SEARCH_QUERY } from "../redux/youtubeSlice";
 
 const Navbar = () => {
+
+  const [search, setSearch] = useState('')
+
   const searchQuery = useSelector((state) => state.Youtube.searchQuery)
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
   const handleSearch = (e) =>{
     if(e.key === "Enter"){
+      dispatch(SET_SEARCH_QUERY(search))
       navigate(`searchResults/${searchQuery}`)
       // dispatch(SET_SEARCH_QUERY(''))
     }
   }
 
   const handleSearchBtn = () =>{
+    dispatch(SET_SEARCH_QUERY(search))
     navigate(`searchResults/${searchQuery}`)
     // dispatch(SET_SEARCH_QUERY(''))
   }
@@ -46,12 +51,12 @@ const Navbar = () => {
             type="text"
             className="px-4 py-1 rounded-tl-full rounded-bl-full focus:outline-none bg-ytBlack border border-[#2e2e2e] text-white focus:border-[#1b5cae] w-full"
             placeholder="Search..."
-            value={searchQuery}
-            onChange={(e) => dispatch(SET_SEARCH_QUERY(e.target.value))}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
             onKeyUp={handleSearch}
           />
           {/* cross icon  */}
-          {searchQuery && (
+          {search && (
             <div className="absolute top-0 right-[10px] cursor-pointer hover:bg-[#222222] w-[30px] h-[30px] rounded-full flex items-center justify-center">
               <RxCross2 color="#fff" onClick={() => dispatch(SET_SEARCH_QUERY(''))} />
             </div>

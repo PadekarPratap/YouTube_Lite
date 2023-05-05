@@ -85,7 +85,7 @@ const VideoDetails = () => {
                   <span>{dayjs(video?.publishedDate).format('MMM DD, YYYY')}</span>
               </div>
               <div className="mt-3">
-                <p className={`${videoDesc ? '' : 'line-clamp-2'}`}>{video?.description}</p>
+                <p className={`break-all ${videoDesc ? '' : 'line-clamp-2'}`}>{video?.description}</p>
               </div>
             </div>
 
@@ -96,7 +96,7 @@ const VideoDetails = () => {
         <div className="h-[550px] xl:col-span-2 overflow-y-scroll">
             <div className="flex flex-col p-2 gap-3">
               {relatedVideos.map((video) => (
-                <RelatedVideos key={video.video.videoId} video={video.video} />
+                <RelatedVideos key={video?.video?.videoId} video={video.video} />
               ))}
             </div>
         </div>
