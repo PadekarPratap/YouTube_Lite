@@ -1,4 +1,4 @@
-export const BASE_URL = "https://youtube138.p.rapidapi.com/";
+export const BASE_URL = "https://youtube138.p.rapidapi.com";
 
 export const options = {
     headers: {

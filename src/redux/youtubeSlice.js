@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const initialState = {
-    isSidebarOpen: false
+    isSidebarOpen: false,
+    query: 'new'
 }
 
 export const youtubeSlice = createSlice({
@@ -11,11 +12,14 @@ export const youtubeSlice = createSlice({
     reducers: {
         CHANGE_SIDEBAR: (state) =>{
             state.isSidebarOpen = !state.isSidebarOpen
+        },
+        UPDATE_QUERY: (state, action) =>{
+            state.query = action.payload
         }
     }
 
 })
 
 
-export const {CHANGE_SIDEBAR} = youtubeSlice.actions
+export const {CHANGE_SIDEBAR, UPDATE_QUERY} = youtubeSlice.actions
 export default youtubeSlice.reducer 
