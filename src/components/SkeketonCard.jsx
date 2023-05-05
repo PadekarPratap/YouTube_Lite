@@ -4,8 +4,8 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 const SkeketonCard = ({cards}) => {
   return (
-    Array(cards).fill(0).map((card) => (
-        <>
+    Array(cards).fill(0).map((card, cardIndex) => (
+        <React.Fragment key={cardIndex}>
       <div className="max-w-[300px] min-h-[250px]">
         <div className="w-full h-[200px]">
           <Skeleton height={200} />
@@ -29,7 +29,7 @@ const SkeketonCard = ({cards}) => {
         </div>
         </div>
       </div>
-    </>
+    </React.Fragment>
     ) )
     
   );

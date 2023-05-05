@@ -5,7 +5,7 @@ import SidebarItem from "./SidebarItem";
 const Sidebar = () => {
   const [tabActive, setTabActive] = useState(0);
   return (
-    <div className="w-[300px] bg-ytBlack h-full px-4 py-2 hover:overflow-y-scroll overflow-hidden">
+    <div className="w-[250px] bg-ytBlack h-full px-4 py-2 hover:overflow-y-scroll overflow-hidden">
       {categories.map((item, itemIndex) => (
         <React.Fragment key={item.name}>
           <SidebarItem

@@ -11,10 +11,10 @@ const FeedPage = () => {
   const { data, loading } = useFetch(`/search/?q=${query}`);
 
   const feed = [...(data?.data?.contents ?? [])];
-  console.log(feed);
+  // console.log(feed);
 
   return (
-    <div className="relative md:left-[300px] md:w-[calc(100%-300px)] bg-ytBlack">
+    <div className="relative md:left-[250px] md:w-[calc(100%-250px)] bg-ytBlack min-h-[calc(100vh-56px)]">
       <div className="px-4 py-5">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 justify-center">
           {loading ? (

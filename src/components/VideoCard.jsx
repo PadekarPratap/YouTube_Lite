@@ -3,6 +3,7 @@ import {FaCheckCircle} from 'react-icons/fa'
 import {GoPrimitiveDot} from 'react-icons/go'
 import { abbreviateNumber } from 'js-abbreviation-number'
 import { useNavigate } from 'react-router-dom'
+import VideoLength from './VideoLength'
 
 const VideoCard = ({video}) => {
 
@@ -12,8 +13,9 @@ const VideoCard = ({video}) => {
     <div className='max-w-[300px] min-h-[250px] bg-ytBlack text-white cursor-pointer' role='button' onClick={() => navigate(`/video/${video.videoId}`)}>
 
         {/* video thumbnail  */}
-        <div className='w-full h-[160px]'>
+        <div className='w-full h-[160px] relative'>
             <img src={video.thumbnails[0].url} alt={video.title} className='w-full h-full rounded-lg' />
+            <VideoLength length={video?.lengthSeconds} />
         </div>
 
         {/* video titles and icon  */}
